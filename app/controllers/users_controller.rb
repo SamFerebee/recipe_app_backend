@@ -14,9 +14,9 @@ class UsersController < ApplicationController
         @user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar])
         if @user.valid?
             session[:user_id] = @user.id
-            render json: @user
+            render json: @user.id
         else
-            render json: "false"
+            render json: @user.errors.full_messages
         end
     end
 
