@@ -9,4 +9,15 @@ class UsersController < ApplicationController
             render json: "false"
         end
     end
+
+    def create_account
+        @user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar])
+        if @user.valid?
+            session[:user_id] = @user.id
+            render json: @user
+        else
+            render json: "false"
+        end
+    end
+
 end
