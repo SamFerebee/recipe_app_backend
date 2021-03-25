@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   ####USER STUFF
   post "/login", to: "users#login"
   post "/create_account", to: "users#create_account"
+  delete "/delete_account/:id", to: "users#destroy"
 
 
 end
