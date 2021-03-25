@@ -6,4 +6,5 @@ class User < ApplicationRecord
     validates :username, uniqueness: { case_sensitive: false }
     validates :avatar, presence: true
     validates :password, presence: true, on: :create
+    validates :password, length: {minimum: 3}, on: :create
 end
