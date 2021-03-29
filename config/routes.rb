@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   patch "/edit_account/:id", to: "users#edit_account"
   patch "/edit_password/:id", to: "users#edit_password"
   get "/me", to: "users#me"
+  get "/users/:id/:recipe/comments", to: "users#check_comment"
 
 
 

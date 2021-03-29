@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         if params[:password] != params[:confirmation]
             render json: ["Passwords must match"]
         else
-            user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar])
+            user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar], comment_history: [])
             if user.valid?
                 token = JWT.encode({user_id: user.id}, "secret", "HS256")
                 render json: {user: user, token: token}
@@ -60,6 +60,16 @@ class UsersController < ApplicationController
             render json: user
         else
             render json: ["Error"]
+        end
+    end
+
+    def check_comment
+        user = User.find(params[:id])
+        found = user.comment_history.include?(params[:recipe].to_i)
+        if found
+            render json: false
+        else
+            render json: true
         end
     end
 
