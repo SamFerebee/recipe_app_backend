@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   #####INGREDIENTS
   get "/ingredients", to: "ingredients#index"
+  get "/ingredients/proteins", to: "ingredients#get_proteins"
+  get "/ingredients/veggies", to: "ingredients#get_veggies"
+  get "/ingredients/sides", to: "ingredients#get_sides"
 
   ####USER STUFF
   post "/login", to: "users#login"
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
   delete "/delete_account/:id", to: "users#destroy"
   patch "/edit_account/:id", to: "users#edit_account"
   patch "/edit_password/:id", to: "users#edit_password"
+
 
 
 end

@@ -4,4 +4,5 @@ class RecipesController < ApplicationController
         @all = Recipe.all
         render json: @all
     end
+
 end
