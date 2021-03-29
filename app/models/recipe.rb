@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
     def average_rating
         if total_ratings == 0
-            return 0
+            return ["No ratings yet!"]
         end
         total_score / total_ratings
     end
