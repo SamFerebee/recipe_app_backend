@@ -52,8 +52,15 @@ class UsersController < ApplicationController
     end
 
     def me
-        user = User.find(params[:id])
-        render json: user
+        auth_header = request.headers["Authorization"]
+        token = auth_header.split.last
+        payload = JWT.decode(token, "secret", true, { algorithm: 'HS256' }).first
+        user = User.find_by(id: payload["user_id"])
+        if (user)
+            render json: user
+        else
+            render json: ["Error"]
+        end
     end
 
 end

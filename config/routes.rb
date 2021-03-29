@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   delete "/delete_account/:id", to: "users#destroy"
   patch "/edit_account/:id", to: "users#edit_account"
   patch "/edit_password/:id", to: "users#edit_password"
+  get "/me", to: "users#me"
 
 
 
