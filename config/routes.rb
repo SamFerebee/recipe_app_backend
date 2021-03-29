@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   ####RECIPES
   get "/recipes", to: "recipes#index"
+  post "/add_comment", to: "recipes#add_comment"
 
   #####INGREDIENTS
   get "/ingredients", to: "ingredients#index"
