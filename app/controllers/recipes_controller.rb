@@ -34,18 +34,20 @@ class RecipesController < ApplicationController
     def create_recipe
         recipe = Recipe.create(
             name: params[:name],
-            description: "Lasagna is good",
-            category: "Entree",
-            image: "https://thestayathomechef.com/wp-content/uploads/2017/08/Most-Amazing-Lasagna-2-e1574792735811.jpg",
-            instructions: [["step 1"], ["step 2"], ["step 3"]],
+            description: params[:description],
+            category: params[:category],
+            image: params[:picture],
+            instructions: params[:instructions],
             total_score: 0,
             total_ratings: 0
         )
         ingredient_list = params[:ingredients]
         ingredient_list.each do |entry|
-            RecipeIngredient.create(quantity: entry["quantity"], ingredient: entry["ingredient"], recipe: recipe)
+            ing = Ingredient.find_by(name: entry["ingredient"])
+            RecipeIngredient.create(quantity: entry["quantity"], ingredient: ing, recipe: recipe)
         end
         render json: recipe
     end
+    
 
 end
