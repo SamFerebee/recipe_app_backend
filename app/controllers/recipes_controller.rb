@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
     def show
         @recipe = Recipe.find(params[:id])
         render json: @recipe
+    end
+    
     def add_comment
         recipe = Recipe.find(params[:recipeId])
         score = recipe.total_score
