@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   ####RECIPES
   get "/recipes", to: "recipes#index"
+  get "/recipes/:id", to: "recipes#show"
 
   #####INGREDIENTS
   get "/ingredients", to: "ingredients#index"
