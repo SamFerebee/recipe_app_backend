@@ -1,7 +1,8 @@
 User.create(
     username: "Sam",
     password: "123",
-    avatar: "https://i.ytimg.com/vi/iHMpPoW_-us/maxresdefault.jpg"
+    avatar: "https://i.ytimg.com/vi/iHMpPoW_-us/maxresdefault.jpg",
+    comment_history: []
 )
 
 ingredientList = [
@@ -44,7 +45,10 @@ chickenParm = Recipe.create(
     name: "Chicken Parm",
     description: "Yummy chicken with mozz and marinara sauce",
     category: "Entree",
-    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg"
+    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg",
+    instructions: [["step 1"], ["step 2"], ["step 3"]],
+    total_score: 0,
+    total_ratings: 0
 )
 
 pickenParm = Recipe.create(
