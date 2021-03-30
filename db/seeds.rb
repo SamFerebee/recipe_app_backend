@@ -55,21 +55,30 @@ pickenParm = Recipe.create(
     name: "Chicken Parm",
     description: "Yummy chicken with mozz and marinara sauce",
     category: "Entree",
-    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg"
+    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg",
+    instructions: [["step 1"], ["step 2"], ["step 3"]],
+    total_score: 0,
+    total_ratings: 0
 )
 
 fhickenParm = Recipe.create(
     name: "Chicken Parm",
     description: "Yummy chicken with mozz and marinara sauce",
     category: "Entree",
-    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg"
+    image: "https://www.thecookierookie.com/wp-content/uploads/2019/04/crispy-chicken-parmesan-recipe-6-of-14.jpg",
+    instructions: [["step 1"], ["step 2"], ["step 3"]],
+    total_score: 0,
+    total_ratings: 0
 )
 
 fhickenParm = Recipe.create(
     name: "Spagetti Carbonara",
     description: "Perfectly cooked spagetti in a creamy egg sauce",
     category: "Entree",
-    image: "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-articleLarge-v2.jpg"
+    image: "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-articleLarge-v2.jpg",
+    instructions: [["step 1"], ["step 2"], ["step 3"]],
+    total_score: 0,
+    total_ratings: 0
 )
 
 RecipeIngredient.create(quantity: 1, ingredient: chicken, recipe: chickenParm)
