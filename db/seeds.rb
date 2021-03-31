@@ -28,7 +28,7 @@ ingredientList = [
         vegan: false,
         vegetarian: false,
         calories: 80,
-        unit: ''
+        unit: 'egg'
     }
 ]
 
