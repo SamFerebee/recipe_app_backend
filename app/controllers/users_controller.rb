@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         if params[:password] != params[:confirmation]
             render json: ["Passwords must match"]
         else
-            user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar], comment_history: [])
+            user = User.create(username: params[:username], password: params[:password], avatar: params[:avatar], comment_history: [], liked_recipes: [])
             if user.valid?
                 token = JWT.encode({user_id: user.id}, "secret", "HS256")
                 render json: {user: user, token: token}
@@ -71,6 +71,32 @@ class UsersController < ApplicationController
         else
             render json: true
         end
+    end
+
+    def get_favorite
+        user = User.find(params[:id])
+        found = user.liked_recipes.include?(params[:recipe].to_i)
+        if found
+            render json: true
+        else
+            render json: false
+        end
+    end
+
+    def add_favorite
+        user = User.find(params[:user].to_i)
+        temp = user.liked_recipes
+        temp.push(params[:recipe].to_i)
+        user.update(liked_recipes: temp)
+        render json: user.liked_recipes
+    end
+
+    def remove_favorite
+        user = User.find(params[:user].to_i)
+        temp = user.liked_recipes
+        temp -= [params[:recipe].to_i]
+        user.update(liked_recipes: temp)
+        render json: user.liked_recipes
     end
 
 end

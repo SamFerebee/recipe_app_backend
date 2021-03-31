@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   patch "/edit_password/:id", to: "users#edit_password"
   get "/me", to: "users#me"
   get "/users/:id/:recipe/comments", to: "users#check_comment"
+  get "/users/:id/:recipe/get_favorite", to: "users#get_favorite"
+  patch "/users/add_favorite", to: "users#add_favorite"
+  patch "/users/remove_favorite", to: "users#remove_favorite"
 
 
 

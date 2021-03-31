@@ -2,7 +2,8 @@ User.create(
     username: "Sam",
     password: "123",
     avatar: "https://i.ytimg.com/vi/iHMpPoW_-us/maxresdefault.jpg",
-    comment_history: []
+    comment_history: [],
+    liked_recipes: []
 )
 
 ingredientList = [
