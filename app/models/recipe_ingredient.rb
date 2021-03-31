@@ -17,5 +17,9 @@ class RecipeIngredient < ApplicationRecord
   def vegetarian
     self.ingredient.vegetarian
   end
+
+  def unit
+    self.ingredient.unit
+  end
   
 end

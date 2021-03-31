@@ -11,21 +11,24 @@ ingredientList = [
         category: "protein",
         vegan: false,
         vegetarian: false,
-        calories: 335
+        calories: 335,
+        unit: "lb"
     },
     {
         name: "garlic",
         category: "vegetable",
         vegan: true,
         vegetarian: true,
-        calories: 5
+        calories: 5,
+        unit: "clove"
     },
     {
         name: "egg",
         category: "protein",
         vegan: false,
         vegetarian: false,
-        calories: 80
+        calories: 80,
+        unit: ''
     }
 ]
 
@@ -34,7 +37,8 @@ ingredientList.each{|ingredient| Ingredient.create(
     category: ingredient[:category],
     vegan: ingredient[:vegan],
     vegetarian: ingredient[:vegetarian],
-    calories: ingredient[:calories]
+    calories: ingredient[:calories],
+    unit: ingredient[:unit]
 )}
 
 chicken = Ingredient.all.find_by(name: "chicken")
