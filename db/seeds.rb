@@ -30,8 +30,106 @@ ingredientList = [
         vegetarian: false,
         calories: 80,
         unit: 'egg'
-    }
+    },
+    {
+        name: "butter",
+        category: "side",
+        vegan: false,
+        vegetarian: true,
+        calories: 102,
+        unit: "tbsp"
+    },
+    {
+        name: "breadcrumbs",
+        category: "side",
+        vegan: false,
+        vegetarian: true,
+        calories: 427,
+        unit: "tbsp"
+    },
+    {
+        name: "lemon juice",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 3,
+        unit: "tbsp"
+    },
+    {
+        name: "whole milk",
+        category: "side",
+        vegan: false,
+        vegetarian: true,
+        calories: 149,
+        unit: "cup(s)"
+    },
+    {
+        name: "flour",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 455,
+        unit: "cup(s)"
+    },
+    {
+        name: "sweet Italian Sausage",
+        category: "protein",
+        vegan: false,
+        vegetarian: false,
+        calories: 1463,
+        unit: "lbs"
+    },
+    {
+        name: "broccoli rabe",
+        category: "vegetable",
+        vegan: true,
+        vegetarian: true,
+        calories: 100,
+        unit: "tbsp"
+    },
+    {
+        name: "olive oil",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 119,
+        unit: "tbsp"
+    },
+    {
+        name: "lemon zest",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 2,
+        unit: "tbsp"
+    },
+    {
+        name: "almound milk",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 60,
+        unit: "cup(s)"
+    },
+    {
+        name: "red bell pepers",
+        category: "side",
+        vegan: true,
+        vegetarian: true,
+        calories: 9,
+        unit: "oz"
+    },
+    {
+        name: "spam",
+        category: "protein",
+        vegan: false,
+        vegetarian: false,
+        calories: 174,
+        unit: "can"
+    },
+
 ]
+
 
 ingredientList.each{|ingredient| Ingredient.create(
     name: ingredient[:name],
