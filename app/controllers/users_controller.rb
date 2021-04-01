@@ -45,7 +45,7 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         if user.password_match?(params[:password], params[:confirmation])
             user.update(password: params[:password])
-            render json: ["Password updated"]
+            render json: true
         else
             render json: ["Your new password must match"]
         end
