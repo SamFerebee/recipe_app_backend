@@ -47,7 +47,7 @@ class UsersController < ApplicationController
             user.update(password: params[:password])
             render json: true
         else
-            render json: ["Your new password must match"]
+            render json: ["Your passwords must match"]
         end
     end
 
